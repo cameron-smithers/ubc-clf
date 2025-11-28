@@ -2,6 +2,8 @@
 
 A Hugo theme that wraps the UBC CLF 7.0.5 shell using CDN-hosted assets and configurable unit metadata.
 
+> Note: This theme is not in production use yet. Treat it as a work-in-progress and validate in your own environment before deploying.
+
 ## Requirements
 - Hugo `>= 0.152.2` (tested)
 - Uses CDN assets `//cdn.ubc.ca/clf/7.0.5` and jQuery 1.12.4
