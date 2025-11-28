@@ -1,0 +1,12 @@
+name = "ubc-clf"
+license = "MIT"
+licenselink = "https://opensource.org/licenses/MIT"
+description = "UBC CLF-based Hugo theme using CDN assets"
+homepage = ""
+tags = ["ubc", "clf", "institutional", "responsive"]
+features = ["clf-header", "ubc-search", "full-width"]
+min_version = "0.110.0"
+
+[author]
+  name = "Your Team"
+  homepage = ""

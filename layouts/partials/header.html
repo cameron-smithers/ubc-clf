@@ -1,0 +1,81 @@
+{{ $p := .Site.Params }}
+{{ $unitName := default "Unit Name" $p.unit_name }}
+{{ $faculty := $p.faculty_name | default "Faculty Name" }}
+{{ $campus := $p.campus_label | default "Vancouver campus" }}
+{{ $unitURL := $p.unit_url | default "/" }}
+<header>
+  <div class="collapse expand" id="ubc7-global-menu">
+    <div id="ubc7-search" class="expand">
+      <div id="ubc7-search-box">
+        <form class="form-search" method="get" action="//www.ubc.ca/search/refine/" role="search">
+          <input type="text" name="q" placeholder="Search this website" aria-label="Search this website" class="input-xlarge search-query">
+          <input type="hidden" name="label" value="Search UBC" />
+          <input type="hidden" name="site" value="*.ubc.ca" />
+          <button type="submit" class="btn">Search</button>
+        </form>
+      </div>
+    </div>
+    <div id="ubc7-global-header" class="expand">
+      <!-- Global Utility Header from CDN -->
+    </div>
+  </div>
+
+  <div class="row-fluid expand" id="ubc7-header">
+    <div class="span1">
+      <div id="ubc7-logo" aria-label="university logo" role="navigation">
+        <a href="//www.ubc.ca" title="The University of British Columbia (UBC)">The University of British Columbia</a>
+      </div>
+    </div>
+    <div class="span11" id="ubc7-wordmark-block">
+      <div id="ubc7-wordmark" aria-label="wordmark">
+        <a href="//www.ubc.ca" title="The University of British Columbia (UBC)">The University of British Columbia</a>
+        <span class="ubc7-campus" id="ubc7-vancouver-campus">{{ $campus }}</span>
+      </div>
+      <div id="ubc7-global-utility">
+        <button type="button" data-toggle="collapse" data-target="#ubc7-global-menu" aria-label="search trigger"><span>UBC Search</span></button>
+        <noscript><a id="ubc7-global-utility-no-script" href="//www.ubc.ca/" title="UBC Search">UBC Search</a></noscript>
+      </div>
+    </div>
+  </div>
+
+  <div id="ubc7-unit" class="row-fluid expand">
+    <div class="span12">
+      <div class="navbar">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target="#ubc7-unit-navigation">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+      </div>
+      <div id="ubc7-unit-name">
+        <a href="{{ $unitURL }}" title="{{ $unitName }}"><span id="ubc7-unit-faculty">{{ $faculty }}</span><span id="ubc7-unit-identifier">{{ $unitName }}</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div id="ubc7-unit-menu" class="navbar expand" role="navigation">
+    <div class="navbar-inner expand">
+      <div class="container">
+        <div class="nav-collapse collapse" id="ubc7-unit-navigation">
+          <ul class="nav">
+            {{ $current := . }}
+            {{ range .Site.Menus.main.ByWeight }}
+              {{ $active := "" }}
+              {{ if or ($current.IsMenuCurrent "main" .) (.HasMenuCurrent "main" $current) }}{{ $active = "active" }}{{ end }}
+              <li class="{{ $active }}">
+                <a href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
+                {{ if .HasChildren }}
+                  <ul class="dropdown-menu">
+                    {{ range .Children.ByWeight }}
+                      <li><a href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a></li>
+                    {{ end }}
+                  </ul>
+                {{ end }}
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

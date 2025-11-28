@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <section class="span12">
+    <header>
+      <h1>{{ .Title }}</h1>
+    </header>
+    <div class="row-fluid">
+      {{ range .Paginator.Pages }}
+        <article class="span12">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          {{ with .Summary }}<p>{{ . }}</p>{{ end }}
+        </article>
+      {{ else }}
+        <p>No content found.</p>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

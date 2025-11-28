@@ -1,0 +1,42 @@
+{{ $p := .Site.Params }}
+<footer id="ubc7-footer" class="expand">
+  <div class="row-fluid expand" id="ubc7-unit-footer">
+    <div class="span10" id="ubc7-unit-address">
+      <div id="ubc7-address-unit-name">{{ default "Unit Name" $p.unit_name }}</div>
+      <div id="ubc7-address-campus">{{ default "Vancouver Campus" $p.address_campus }}</div>
+      <div id="ubc7-address-street">{{ default "1234 Street Name" $p.address_street }}</div>
+      <div id="ubc7-address-location">
+        <span id="ubc7-address-city">{{ default "Vancouver" $p.address_city }}</span>, <span id="ubc7-address-province" title="{{ default "British Columbia" $p.address_province }}">{{ default "BC" $p.address_province_code }}</span> <span id="ubc7-address-country">{{ default "Canada" $p.address_country }}</span> <span id="ubc7-address-postal">{{ default "V0V 0V0" $p.address_postal }}</span>
+      </div>
+      {{ with $p.phone }}<div id="ubc7-address-phone">Tel {{ . }}</div>{{ end }}
+      {{ with $p.email }}<div id="ubc7-address-email">E-mail <a href="mailto:{{ . }}">{{ . }}</a></div>{{ end }}
+    </div>
+    <div class="span2">
+      <strong>Find us on</strong>
+      <div id="ubc7-unit-social-icons">
+        {{ with $p.social.facebook }}<a href="{{ . }}" aria-label="facebook"><i class="icon-facebook-sign"></i></a>&nbsp;{{ end }}
+        {{ with $p.social.twitter }}<a href="{{ . }}" aria-label="twitter"><i class="icon-twitter-sign"></i></a>&nbsp;{{ end }}
+        {{ with $p.social.youtube }}<a href="{{ . }}" aria-label="youtube"><i class="icon-youtube"></i></a>{{ end }}
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid expand ubc7-back-to-top">
+    <div class="span2">
+      <a href="#" title="Back to top">Back to top <div class="ubc7-arrow up-arrow grey"></div></a>
+    </div>
+  </div>
+  <div class="row-fluid expand" id="ubc7-global-footer">
+    <div class="span5" id="ubc7-signature"><a href="//www.ubc.ca/" title="The University of British Columbia (UBC)">The University of British Columbia</a></div>
+    <div class="span7" id="ubc7-footer-menu"></div>
+  </div>
+  <div class="row-fluid expand" id="ubc7-minimal-footer">
+    <div class="span12">
+      <ul>
+        <li><a href="//cdn.ubc.ca/clf/ref/emergency" title="Emergency Procedures">Emergency Procedures</a> <span class="divider">|</span></li>
+        <li><a href="//cdn.ubc.ca/clf/ref/terms" title="Terms of Use">Terms of Use</a> <span class="divider">|</span></li>
+        <li><a href="//cdn.ubc.ca/clf/ref/copyright" title="UBC Copyright">Copyright</a> <span class="divider">|</span></li>
+        <li><a href="//cdn.ubc.ca/clf/ref/accessibility" title="Accessibility">Accessibility</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

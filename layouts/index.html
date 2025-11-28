@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <div class="span12">
+    {{ if .Content }}
+      {{ .Content }}
+    {{ else }}
+      <h1>{{ .Site.Title }}</h1>
+      <p class="lead">UBC CLF shell homepage. Replace this with your own content or create sections via Hugo pages.</p>
+    {{ end }}
+  </div>
+{{ end }}

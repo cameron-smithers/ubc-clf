@@ -1,0 +1,47 @@
+# Example configuration for ubc-clf theme
+baseURL = "https://example.com/"
+title = "UBC CLF Example"
+theme = "ubc-clf"
+languageCode = "en-us"
+
+[menu]
+  [[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+  [[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 2
+
+  [[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 3
+
+[params]
+# Unit identity
+unit_name = "Awesome Unit"
+faculty_name = "Faculty of Excellence"
+campus_label = "Vancouver campus"
+unit_url = "/"
+
+# Address block
+address_campus = "Vancouver Campus"
+address_street = "1234 Main Mall"
+address_city = "Vancouver"
+address_province = "British Columbia"
+address_province_code = "BC"
+address_country = "Canada"
+address_postal = "V6T 1Z4"
+phone = "604-555-1234"
+email = "info@awesome.ubc.ca"
+
+[params.social]
+facebook = "https://facebook.com/awesomeunit"
+twitter = "https://twitter.com/awesomeunit"
+youtube = "https://youtube.com/@awesomeunit"
+
+# Uncomment to load additional JS from /static
+# custom_js = ["js/extra.js"]
