@@ -17,3 +17,4 @@ A Hugo theme that wraps the UBC CLF 7.0.5 shell using CDN-hosted assets and conf
 - Uses CDN assets: `//cdn.ubc.ca/clf/7.0.5` and jQuery 1.12.4.
 - Full-width layout by default; drop IE conditionals.
 - Content renders in `main` as standard Hugo `.Content`; homepage uses `layouts/index.html`.
+# ubc-clf
