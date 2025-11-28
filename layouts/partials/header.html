@@ -61,7 +61,7 @@
             {{ $current := . }}
             {{ range .Site.Menus.main.ByWeight }}
               {{ $active := "" }}
-              {{ if or ($current.IsMenuCurrent "main" .) (.HasMenuCurrent "main" $current) }}{{ $active = "active" }}{{ end }}
+	      {{ if $.Page.IsMenuCurrent "main" . }}{{ $active = "active" }}{{ end }}
               <li class="{{ $active }}">
                 <a href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
                 {{ if .HasChildren }}
