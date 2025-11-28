@@ -4,8 +4,8 @@
   {{ partial "head.html" . }}
 </head>
 <body>
+  {{ partial "header.html" . }}
   <div class="container">
-    {{ partial "header.html" . }}
 
     <main id="content" role="main" class="row-fluid expand">
       {{ block "main" . }}{{ end }}
